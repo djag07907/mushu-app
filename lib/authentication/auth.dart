@@ -7,7 +7,9 @@ class Auth {
       String email, String password) async {
     try {
       UserCredential result = await _firebaseAuth.signInWithEmailAndPassword(
-          email: email, password: password);
+        email: email,
+        password: password,
+      );
       User? user = result.user;
       return user?.uid;
     } on FirebaseAuthException catch (e) {
@@ -24,8 +26,11 @@ class Auth {
   Future<String?> registerWithEmailAndPassword(
       String email, String password) async {
     try {
-      UserCredential result = await _firebaseAuth
-          .createUserWithEmailAndPassword(email: email, password: password);
+      UserCredential result =
+          await _firebaseAuth.createUserWithEmailAndPassword(
+        email: email,
+        password: password,
+      );
       User? user = result.user;
       return user?.uid;
     } on FirebaseAuthException catch (e) {

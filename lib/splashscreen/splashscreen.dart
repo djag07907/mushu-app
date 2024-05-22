@@ -16,15 +16,24 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   _navigateToHome() async {
-    await Future.delayed(const Duration(seconds: 3), () {});
-    Navigator.pushReplacementNamed(context, '/login');
+    await Future.delayed(
+        const Duration(
+          seconds: 3,
+        ),
+        () {});
+    Navigator.pushReplacementNamed(
+      context,
+      '/login',
+    );
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Lottie.asset('assets/animations/dog_animation.json'),
+        child: Lottie.asset(
+          'assets/animations/dog_animation.json',
+        ),
       ),
     );
   }

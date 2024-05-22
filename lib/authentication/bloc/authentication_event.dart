@@ -5,8 +5,11 @@ class LoginEvent extends AuthEvent {
   final String password;
   final String errorMessage;
 
-  LoginEvent(
-      {required this.email, required this.password, this.errorMessage = ''});
+  LoginEvent({
+    required this.email,
+    required this.password,
+    this.errorMessage = '',
+  });
 }
 
 class RegisterEvent extends AuthEvent {
@@ -14,8 +17,11 @@ class RegisterEvent extends AuthEvent {
   final String password;
   final String errorMessage;
 
-  RegisterEvent(
-      {required this.email, required this.password, this.errorMessage = ''});
+  RegisterEvent({
+    required this.email,
+    required this.password,
+    this.errorMessage = '',
+  });
 }
 
 class LogoutEvent extends AuthEvent {}

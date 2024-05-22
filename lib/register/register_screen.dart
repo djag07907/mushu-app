@@ -23,10 +23,14 @@ class _RegisterScreenState extends State<RegisterScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Mushu App'),
+        title: const Text(
+          'Mushu App',
+        ),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(
+          16.0,
+        ),
         child: Form(
           key: _formKey,
           child: Column(
@@ -35,36 +39,54 @@ class _RegisterScreenState extends State<RegisterScreen> {
               if (_errorMessage != null)
                 Text(
                   _errorMessage!,
-                  style: const TextStyle(color: Colors.red),
+                  style: const TextStyle(
+                    color: Colors.red,
+                  ),
                 ),
               const SizedBox(height: 16),
               TextFormField(
-                decoration: const InputDecoration(labelText: 'Name'),
+                decoration: const InputDecoration(
+                  labelText: 'Name',
+                ),
                 onSaved: (value) => _name = value,
               ),
-              const SizedBox(height: 16),
+              const SizedBox(
+                height: 16,
+              ),
               TextFormField(
-                decoration: const InputDecoration(labelText: 'Email'),
+                decoration: const InputDecoration(
+                  labelText: 'Email',
+                ),
                 validator: (value) => value != null && !value.contains('@')
                     ? 'Invalid email'
                     : null,
                 onSaved: (value) => _email = value,
               ),
-              const SizedBox(height: 16),
+              const SizedBox(
+                height: 16,
+              ),
               TextFormField(
-                decoration: const InputDecoration(labelText: 'Phone Number'),
+                decoration: const InputDecoration(
+                  labelText: 'Phone Number',
+                ),
                 onSaved: (value) => _phoneNumber = value,
               ),
-              const SizedBox(height: 16),
+              const SizedBox(
+                height: 16,
+              ),
               TextFormField(
-                decoration: const InputDecoration(labelText: 'Password'),
+                decoration: const InputDecoration(
+                  labelText: 'Password',
+                ),
                 validator: (value) => value != null && value.length < 7
                     ? 'Password too short'
                     : null,
                 onSaved: (value) => _password = value,
                 obscureText: true,
               ),
-              const SizedBox(height: 16),
+              const SizedBox(
+                height: 16,
+              ),
               ElevatedButton(
                 onPressed: () async {
                   if (_formKey.currentState!.validate()) {
@@ -72,7 +94,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     String? uid = await _auth.registerWithEmailAndPassword(
                         _email!, _password!);
                     if (uid != null) {
-                      Navigator.pushReplacementNamed(context, '/home');
+                      Navigator.pushReplacementNamed(
+                        context,
+                        '/home',
+                      );
                     } else {
                       setState(() {
                         _errorMessage = uid;
@@ -80,7 +105,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     }
                   }
                 },
-                child: const Text('Register'),
+                child: const Text(
+                  'Register',
+                ),
               ),
             ],
           ),
