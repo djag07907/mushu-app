@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "336469570482",
+    "project_id": "mushu-app-c120c",
+    "storage_bucket": "mushu-app-c120c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:336469570482:android:9e181bfbb9c6cd055beaab",
+        "android_client_info": {
+          "package_name": "com.example.mushu_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCX5hMChz_R4Zf_yOe4HVJ4Ud5ru8qItMw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
