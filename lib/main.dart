@@ -5,6 +5,7 @@ import 'package:mushu_app/firebase_options.dart';
 import 'package:mushu_app/home/home_screen.dart';
 import 'package:mushu_app/login/login_screen.dart';
 import 'package:mushu_app/register/register_screen.dart';
+import 'package:mushu_app/splashscreen/splashscreen.dart';
 import 'package:mushu_app/user/model/user_model.dart';
 
 Future<void> main() async {
@@ -25,8 +26,9 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      initialRoute: '/login',
+      initialRoute: '/splash',
       routes: {
+        '/splash': (context) => const SplashScreen(),
         '/login': (context) => const LoginScreen(),
         '/register': (context) => const RegisterScreen(),
         '/home': (context) => const HomeScreen(),
