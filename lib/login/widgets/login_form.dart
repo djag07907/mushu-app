@@ -1,7 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:mushu_app/authentication/service/auth.dart';
 import 'package:mushu_app/resources/constants.dart';
 import 'package:mushu_app/resources/styles.dart';
 
@@ -22,13 +21,6 @@ class _LoginFormState extends State<LoginForm> {
 
   @override
   Widget build(BuildContext context) {
-    // final Auth auth = Auth();
-    // final formKey = GlobalKey<FormState>();
-    // String errorMessage = '';
-
-    // String email = '';
-    // String password = '';
-
     return Expanded(
       child: Scaffold(
         body: Padding(
@@ -72,15 +64,6 @@ class _LoginFormState extends State<LoginForm> {
                   onPressed: () async {
                     if (formKey.currentState!.validate()) {
                       formKey.currentState!.save();
-                      // String? uid = await auth.signInWithEmailAndPassword(
-                      //     email, password);
-                      // if (uid != null) {
-                      //   Navigator.pushReplacementNamed(context, '/home');
-                      // } else {
-                      //   setState(() {
-                      //     errorMessage = incorrectCredentials;
-                      //   });
-                      // }
                       login();
                     }
                   },
