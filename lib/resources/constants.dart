@@ -1,6 +1,8 @@
 const userNotFound = "User not found or password is incorrect";
 const userCreated = "User created successfully";
 const loginSuccess = "Login successful";
+const goToLogin = "Go to login screen";
+const tryAgain = "Try again";
 const incorrectCredentials = "Incorrect email or password. Please try again.";
 const somethingHappened = "Oops! Something happened";
 const weakPassword = "The password is too weak";

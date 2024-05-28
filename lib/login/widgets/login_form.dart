@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 import 'package:mushu_app/resources/constants.dart';
 import 'package:mushu_app/resources/styles.dart';
 
@@ -104,6 +105,23 @@ class _LoginFormState extends State<LoginForm> {
       if (kDebugMode) {
         print("Error: $e");
       }
+      showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: const Text(incorrectCredentials),
+            content: Lottie.asset('assets/animations/confused_settings.json'),
+            actions: [
+              TextButton(
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                child: const Text(tryAgain),
+              ),
+            ],
+          );
+        },
+      );
     }
   }
 }
