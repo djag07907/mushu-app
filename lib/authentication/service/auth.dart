@@ -1,4 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:mushu_app/resources/constants.dart';
 
 class Auth {
   final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
@@ -11,7 +12,12 @@ class Auth {
         password: password,
       );
       User? user = result.user;
-      return user?.uid;
+      // return user?.uid;
+      if (user != null) {
+        return user.uid;
+      } else {
+        return 'User not found or password is incorrect.';
+      }
     } on FirebaseAuthException catch (e) {
       if (e.code == 'user-not-found') {
         return 'No user found for that email.';
@@ -35,7 +41,7 @@ class Auth {
       return user?.uid;
     } on FirebaseAuthException catch (e) {
       if (e.code == 'weak-password') {
-        return 'The password provided is too weak.';
+        return weakPassword;
       } else if (e.code == 'email-already-in-use') {
         return 'The account already exists for that email.';
       } else {

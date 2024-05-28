@@ -10,6 +10,17 @@ class SplashScreen extends StatefulWidget {
 
 class _SplashScreenState extends State<SplashScreen> {
   @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: Lottie.asset(
+          'assets/animations/dog_animation.json',
+        ),
+      ),
+    );
+  }
+
+  @override
   void initState() {
     super.initState();
     _navigateToHome();
@@ -24,17 +35,6 @@ class _SplashScreenState extends State<SplashScreen> {
     Navigator.pushReplacementNamed(
       context,
       '/login',
-    );
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: Lottie.asset(
-          'assets/animations/dog_animation.json',
-        ),
-      ),
     );
   }
 }

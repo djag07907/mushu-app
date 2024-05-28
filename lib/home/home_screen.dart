@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mushu_app/resources/constants.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -12,8 +13,14 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: ElevatedButton(
+          onPressed: () {
+            Navigator.pushReplacementNamed(context, '/login');
+          },
+          child: const Icon(Icons.exit_to_app),
+        ),
         title: const Text(
-          'Mushu App',
+          mushuAppName,
         ),
       ),
       body: const Center(

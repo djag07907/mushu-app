@@ -1,0 +1,9 @@
+const userNotFound = "User not found or password is incorrect";
+const somethingHappened = "Oops! Something happened";
+const weakPassword = "The password is too weak";
+const mushuAppName = "Mushu App";
+const loginTitle = "Login";
+const registerTitle = "Register";
+const emailLabel = "Email";
+const passwordLabel = "Password";
+const usernameLabel = "Username";

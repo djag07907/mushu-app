@@ -1,7 +1,8 @@
 import 'package:bloc/bloc.dart';
-import 'package:mushu_app/authentication/auth.dart';
+import 'package:mushu_app/authentication/service/auth.dart';
 import 'package:mushu_app/authentication/bloc/authentication_event.dart';
 import 'package:mushu_app/authentication/bloc/authentication_state.dart';
+import 'package:mushu_app/resources/constants.dart';
 
 class AuthBloc extends Bloc<AuthEvent, AuthState> {
   final Auth _auth = Auth();
@@ -32,7 +33,8 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         );
       } else {
         yield AuthErrorState(
-            errorMessage: 'User not found or password is incorrect');
+          errorMessage: userNotFound,
+        );
       }
     } catch (e) {
       yield AuthErrorState(

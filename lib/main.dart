@@ -1,12 +1,10 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:mushu_app/authentication/auth.dart';
 import 'package:mushu_app/firebase_options.dart';
 import 'package:mushu_app/home/home_screen.dart';
 import 'package:mushu_app/login/login_screen.dart';
 import 'package:mushu_app/register/register_screen.dart';
 import 'package:mushu_app/splashscreen/splashscreen.dart';
-import 'package:mushu_app/user/model/user_model.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
