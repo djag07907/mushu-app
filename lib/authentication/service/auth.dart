@@ -12,12 +12,7 @@ class Auth {
         password: password,
       );
       User? user = result.user;
-      // return user?.uid;
-      if (user != null) {
-        return user.uid;
-      } else {
-        return 'User not found or password is incorrect.';
-      }
+      return user?.uid;
     } on FirebaseAuthException catch (e) {
       if (e.code == 'user-not-found') {
         return 'No user found for that email.';
@@ -30,15 +25,16 @@ class Auth {
   }
 
   Future<String?> registerWithEmailAndPassword(
-      String email, String password) async {
+    String email,
+    String password,
+  ) async {
     try {
-      UserCredential result =
+      UserCredential userCredential =
           await _firebaseAuth.createUserWithEmailAndPassword(
         email: email,
         password: password,
       );
-      User? user = result.user;
-      return user?.uid;
+      return userCredential.user?.uid;
     } on FirebaseAuthException catch (e) {
       if (e.code == 'weak-password') {
         return weakPassword;

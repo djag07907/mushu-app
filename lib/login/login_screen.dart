@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mushu_app/authentication/service/auth.dart';
 import 'package:mushu_app/login/widgets/login_form.dart';
 import 'package:mushu_app/resources/constants.dart';
-import 'package:mushu_app/user/model/user_model.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});

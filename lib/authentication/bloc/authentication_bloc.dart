@@ -1,4 +1,5 @@
 import 'package:bloc/bloc.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:mushu_app/authentication/service/auth.dart';
 import 'package:mushu_app/authentication/bloc/authentication_event.dart';
 import 'package:mushu_app/authentication/bloc/authentication_state.dart';

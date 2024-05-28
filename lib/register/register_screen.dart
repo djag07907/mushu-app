@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mushu_app/authentication/service/auth.dart';
 import 'package:mushu_app/register/widgets/register_form.dart';
-import 'package:mushu_app/user/model/user_model.dart';
 
 class RegisterScreen extends StatelessWidget {
   const RegisterScreen({super.key});
