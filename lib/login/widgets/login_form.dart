@@ -16,6 +16,7 @@ class _LoginFormState extends State<LoginForm> {
   final FirebaseAuth _auth = FirebaseAuth.instance;
   final formKey = GlobalKey<FormState>();
   String? _errorMessage;
+  bool _isLoading = false;
 
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
@@ -61,17 +62,29 @@ class _LoginFormState extends State<LoginForm> {
                   obscureText: true,
                 ),
                 const SizedBox(height: 16.0),
-                ElevatedButton(
-                  onPressed: () async {
-                    if (formKey.currentState!.validate()) {
-                      formKey.currentState!.save();
-                      login();
-                    }
-                  },
-                  child: const Text(
-                    loginTitle,
+                if (_isLoading)
+                  Center(
+                    child: Lottie.asset('assets/animations/cat_loader.json'),
+                  )
+                else
+                  // const SizedBox(height: 16.0),
+                  ElevatedButton(
+                    onPressed: () async {
+                      if (formKey.currentState!.validate()) {
+                        formKey.currentState!.save();
+                        setState(() {
+                          _isLoading = true;
+                        });
+                        login();
+                        setState(() {
+                          _isLoading = false;
+                        });
+                      }
+                    },
+                    child: const Text(
+                      loginTitle,
+                    ),
                   ),
-                ),
               ],
             ),
           ),
